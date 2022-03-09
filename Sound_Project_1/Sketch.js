@@ -2,12 +2,12 @@ const sounds = new Tone.Players({
   cow: "Cow_Sound.wav",
   rooster: "Rooster_Crowing_Sound.wav",
   sheep: "Sheep_Noise.wav",
-  questionableSheep: "Sheep_Noise_Question_Mark" 
+  questionableSheep: "Sheep_Noise_Question_Mark.wav" 
 })
 
 let soundNames = ['cow','rooster','sheep','questionableSheep'];
 
-const delay = new TouchEvent.FeedbackDelay("8n", 0.5);
+const delay = new Tone.FeedbackDelay("8n", 0.5);
 
 
 let button;
@@ -18,7 +18,7 @@ let slider;
 function setup() {
     createCanvas(400, 400);
     sounds.connect(delay);
-    delay.toDestination;
+    delay.toDestination();
 
     button = createButton('cow');
     button.position(200, 400);

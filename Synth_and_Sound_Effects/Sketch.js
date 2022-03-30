@@ -1,6 +1,3 @@
-const { Nexus } = require("../Synths and Sequencers/NexusUI");
-const { Tone } = require("./Tone");
-
 let pitch = 800;
 
 function preload() {

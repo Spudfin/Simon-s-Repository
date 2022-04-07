@@ -1,4 +1,4 @@
-const { Tone } = require("./Tone");
+
 
 let currentColor, red, orange, yellow, green, cyan, blue, magenta, brown, white, black;
 const synth = new Tone.Synth().toDestination();
@@ -35,14 +35,10 @@ function setup() {
 }
 
 function draw(){
-  if(mouseIsPressed){
-    if(mouseX > 51){
-      drawing();
-      playSound('Drip2'); // This sound should play whenever you start painting, I have no clue why the code just ignores it.
-      synth.triggerAttackRelease("C4", "8n"); // No idea why this isn't playing either. I'mm following the example videos exactly.
-    }
-  }
   
+  if(mouseX > 51 && mouseIsPressed){
+    drawing();
+  }
   black.appear();
   black.onMousePressed();
   red.appear();
@@ -54,6 +50,13 @@ function draw(){
   cyan.appear();
   magenta.appear();
   brown.appear();
+}
+
+function mousePressed(){
+  if(mouseX > 51){
+    sounds.player('Drip1').start() // This sound should play whenever you start painting, I have no clue why the code just ignores it.
+    synth.triggerAttackRelease("C4", "8n"); // No idea why this isn't playing either. I'mm following the example videos exactly.
+  }
 }
 
 class colorBox{
@@ -83,31 +86,22 @@ appear(){
         currentColor = "black";
       } else if (mouseY > 30 && mouseY < 60){
         currentColor = "red";
-        playSound('Drip1');
       } else if (mouseY > 60 && mouseY < 90){
         currentColor = "green";
-        playSound('Drip1');
       } else if (mouseY > 90 && mouseY < 120){
         currentColor = "blue";
-        playSound('Drip1');
       } else if (mouseY > 120 && mouseY < 150){
         currentColor = "white";
-        playSound('Drip1');
       } else if (mouseY > 150 && mouseY < 180){
         currentColor = "yellow";
-        playSound('Drip1');
       } else if (mouseY > 180 && mouseY < 210){
         currentColor = "orange";
-        playSound('Drip1');
       } else if (mouseY > 210 && mouseY < 240){
         currentColor = "cyan";
-        playSound('Drip1');
       } else if (mouseY > 240 && mouseY < 270){
         currentColor = "magenta";
-        playSound('Drip1');
       } else if (mouseY > 270 && mouseY < 300){
         currentColor = "brown";
-        playSound('Drip1');
       }
         
      }

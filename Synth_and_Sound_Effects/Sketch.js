@@ -40,63 +40,63 @@ noiseEnv.connect(noiseFilter);
 noiseFilter.connect(gain);
 
 
-let button1;
-let button2;
-let button3;
+//let button1;
+//let button2;
+//let button3;
 
-let slider1;
+//let slider1;
 
-let nxSlider;
-let nxDial;
-let nxButtons = [];
+//let nxSlider;
+//let nxDial;
+//let nxButtons = [];
 
 function preload() {
     spring = loadImage("Spring.jpg")
 
-    nxSlider = new Nexus.Slider('#slider');
+//    nxSlider = new Nexus.Slider('#slider');
 
-    nxDial = Nexus.Add.Dial('#dial',{
-        'size': [100,100]
-    });
-    nxButtons[0] = Nexus.Add.Button('#dial');
+//    nxDial = Nexus.Add.Dial('#dial',{
+//        'size': [100,100]
+//    });
+//    nxButtons[0] = Nexus.Add.Button('#dial');
 }
 
 function setup() {
     createCanvas(400, 400);
 
-    button1 = createButton("Boing", 'boing');
-    button1.position(200, 300);
-    button1.mousePressed(boing);
+//    button1 = createButton("Boing", 'boing');
+//    button1.position(200, 300);
+//    button1.mousePressed(boing);
 
-    button2 = createButton("multiBoing");
-    button2.position(200,340);
-    button2.mousePressed( () => multiBoing(5) );
+//    button2 = createButton("multiBoing");
+//    button2.position(200,340);
+//    button2.mousePressed( () => multiBoing(5) );
 
-    button3 = document.getElementById('heartDiv');
-    button3.onclick = () => buttonSound('theHeart');
+    // button3 = document.getElementById('heartDiv');
+    // button3.onclick = () => buttonSound('theHeart');
 
-    slider1 = createSlider(0,1,0,0.1);
-    slider1.mouseReleased(()=>{
-        let delayTime = slider1.value();
-        delay.delayTime.value = delayTime;
-    });
+   // slider1 = createSlider(0,1,0,0.1);
+   // slider1.mouseReleased(()=>{
+   //     let delayTime = slider1.value();
+   //     delay.delayTime.value = delayTime;
+   // });
 
-    nxSlider.on('change', function (v){
-        delay.delayTime.value = v;
-    })
+    // nxSlider.on('change', function (v){
+    //    delay.delayTime.value = v;
+    // })
     
-    nxDial.on('change', (v)=>{
-        console.log(v)
-        gain.gain.value = v;
-    })
-    nxButtons[0].on('change', (v)=>{
-        if(v.state === true){
-            console.log(v)
-            noiseEnv.trigerAttackRelease(0.5);
-            noiseFilter.frequency.setValueAtTime(200);
-            noiseFilter.frequency.exponentialRampToValueAtTime(1000,'+0.5');
-        }
-    })
+    // nxDial.on('change', (v)=>{
+    //    console.log(v)
+    //    gain.gain.value = v;
+    //})
+    // nxButtons[0].on('change', (v)=>{
+    //    if(v.state === true){
+    //        console.log(v)
+    //        noiseEnv.trigerAttackRelease(0.5);
+    //        noiseFilter.frequency.setValueAtTime(200);
+    //        noiseFilter.frequency.exponentialRampToValueAtTime(1000,'+0.5');
+    //    }
+    //})
 }
 
 function draw() {

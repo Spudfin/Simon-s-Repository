@@ -55,6 +55,13 @@ function moveDown(distance=2) {
     })
 }
 
+function timer() {
+    return(int(millis() - startTime) / 1000);
+}
+
+let time = timer();
+text("Time: " + (time), 30, 30);
+
 function spawnMeteor() {
     let met = meteors[sprites.length];
     let metX = map(met.reclat, -180, 180, 0, width);

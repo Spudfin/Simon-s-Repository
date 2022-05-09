@@ -1,14 +1,27 @@
 let flashingStar;
 let sx = 0;
 
+const sounds = new Tone.Players({
+    Title_Theme: "Space_Adventure_Title_Theme.wav"
+  })
+
 function preload(){
     flashingStar = loadImage("Title Star Sprites2.png");
 }
 
+//const delay = new Tone.FeedbackDelay("8n", 0.5);
+
 function setup() {
 createCanvas(400,400);
-//imageMode(CENTER);
+
+//sounds.connect(delay);
+//delay.toDestination();
+
+//playSound('Title_Theme');
 }
+
+let button;
+let buttons = [];
 
 function draw() {
 background(0);
@@ -30,13 +43,13 @@ sx = (sx + 1) % 2;
 }
 
 button = createButton('Alien');
-    button.position(180, 100+75);
+    button.position(180, 175);
 button = createButton('Rocket');
-    button.position(175, 125+75);
+    button.position(175, 200);
 button = createButton('Eyeball');
-    button.position(174, 150+75);
+    button.position(174, 225);
 button = createButton('S.S.SWEETHEART');
-    button.position(145, 175+75);
+    button.position(145, 250);
 button = createButton('Cat');
-    button.position(185, 200+75);
+    button.position(185, 275);
 }

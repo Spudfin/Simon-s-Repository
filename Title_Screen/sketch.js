@@ -2,9 +2,13 @@ function preload(){
     flashingStar = loadImage("Title Star Sprites2.png");
 }
 
-function draw() {
+function setup() {
 createCanvas(400,400);
-background(0);
+imageMode(CENTER);
+}
+
+function draw() {
+background(255);
 textsize(32);
 text("SPACE ADVENTURE", 50, 50);
 fill(255,255,255);

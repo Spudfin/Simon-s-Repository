@@ -1,6 +1,3 @@
-const { Nexus } = require("./NexusUI");
-const { Tone } = require("./Tone");
-
 let slider;
 
 const synth = new Tone.PluckSynth();
@@ -65,7 +62,7 @@ function setup() {
     synth.resonance = 0.98;
     // synth.harmonicity.value = 1.25;
     //play a middle 'C' for the duration of an 8th note
-    synth.trigerAttackRelease("C4","8n");
+    synth.triggerAttackRelease("C4","8n");
 
     slider = new Nexus.Slider('#slider');
     slider.on('change', (v)=>{
@@ -75,6 +72,8 @@ function setup() {
   
   function draw() {
     background(220);
+    text('Press keys Q through I to play different notes', 20, 70);
+    text('Use the slider to adjust sonic variety', 20, 90);
   }
 
 function keyPressed() {
@@ -82,7 +81,7 @@ function keyPressed() {
     console.log(toPlay);
 
     osc.frequency.value = toPlay;
-    ampEnv.Env.triggerAttackRelease('8n');
+    ampEnv.triggerAttackRelease('8n');
 
     //  synth.triggerAttackRelease(toPlay, 0.5);
     //  metal.triggerAttackRelease("C3", '8n', '+0.5');

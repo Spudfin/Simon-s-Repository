@@ -55,7 +55,7 @@ function draw(){
 function mousePressed(){
   if(mouseX > 51){
     sounds.player('Drip1').start() // This sound should play whenever you start painting, I have no clue why the code just ignores it.
-    synth.triggerAttackRelease("C4", "8n"); // No idea why this isn't playing either. I'mm following the example videos exactly.
+    //synth.triggerAttackRelease("C4", "8n"); // No idea why this isn't playing either. I'mm following the example videos exactly.
   }
 }
 
